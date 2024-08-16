@@ -1,0 +1,13 @@
+**/*.toc
+**/*.lox
+**/*.out
+**/*.log
+**/*.fls
+**/*.aux
+**/*.ini
+**/*.fdb_latexmk
+**/*.gz
+Main.pdf
+tmp
+**/.vscode
+Pictures
