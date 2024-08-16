@@ -1,0 +1,105 @@
+\ProvidesPackage{Preambule/MyStyle}[It`s for me]
+
+%%%----------ШРИФТЫ----------%%%
+\RequirePackage{cmap}
+\RequirePackage{amsmath}
+
+\RequirePackage{iftex}
+\ifxetex
+	\RequirePackage[charter]{mathdesign}	
+	\RequirePackage{polyglossia}						
+	\RequirePackage{fontenc}
+	\RequirePackage{unicode-math}
+							
+	\setmainlanguage{english}
+	\setotherlanguage{english}
+	
+	\setmainfont{Arial}
+\else
+	\RequirePackage[charter]{mathdesign}
+	\RequirePackage[14pt]{extsizes}
+	\RequirePackage[T2A]{fontenc}
+	\RequirePackage[utf8]{inputenc}
+	\RequirePackage[english, russian]{babel}
+	
+	\renewcommand*{\rmdefault}{cmr}
+\fi
+
+%%%----------ГИПЕРССЫЛКИ----------%%%
+
+\RequirePackage{hyperref}
+\RequirePackage[dvipsnames, table]{xcolor}
+
+\hypersetup{
+	linktoc=all,
+	colorlinks=true,
+	linkcolor=Blue,
+	urlcolor=Mulberry,
+	citecolor=OliveGreen,
+	filecolor=Mulberry
+}
+
+%%%----------ПОЛЯ----------%%%
+
+\RequirePackage[top = 2 cm, bottom = 2 cm, left = 1.5 cm, right = 1.5 cm]{geometry}
+\RequirePackage{indentfirst}
+
+%%%----------КОЛОНТИТУЛЫ----------%%%
+
+\RequirePackage{fancyhdr}
+
+%%%----------ГРАФИКА----------%%%
+
+\RequirePackage{tikz}
+\RequirePackage{graphics}
+\RequirePackage{float}
+\RequirePackage{cellspace}
+\RequirePackage[section]{placeins}
+
+\graphicspath{{./Pictures/}}
+
+\setlength\cellspacetoplimit{0pt}
+\setlength\cellspacebottomlimit{0pt}
+\newcommand\RaiseImage[2][scale=1]{
+	\raisebox{-0.1\height}{\includegraphics[#1]{#2}}
+}
+
+\renewcommand{\thefigure}%
+{\thesection.\arabic{figure}}
+
+%%%----------ТАБЛИЦЫ----------%%%
+
+\RequirePackage{array}
+\RequirePackage{longtable}
+
+\setlength{\arrayrulewidth}{0.3mm}
+\setlength{\arraycolsep}{5pt}
+\renewcommand{\arraystretch}{1.8}
+
+%%%----------ССЫЛКИ----------%%%
+
+\RequirePackage{prettyref}
+\newrefformat{fig}{Рис.~\ref{#1}}
+\newrefformat{tbl}{Табл.~\ref{#1}}
+
+%%%----------РАЗНОЕ----------%%%
+
+\RequirePackage{epigraph}
+\RequirePackage{fixme}
+
+%%%----------МАКРОСЫ----------%%%
+
+\newcommand{\setTextVar}[2]{
+    \ifdefined #1
+        \renewcommand{#1}{#2}
+    \else
+        \newcommand{#1}{#2}
+    \fi
+}
+
+%%%----------МОИ ОКРУЖЕНИЯ----------%%%
+
+
+
+\author{Дима}
+\title{Отчёт}
