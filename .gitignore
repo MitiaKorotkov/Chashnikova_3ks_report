@@ -8,6 +8,7 @@
 **/*.fdb_latexmk
 **/*.gz
 Main.pdf
+Main.tex
 tmp
 **/.vscode
 Pictures
