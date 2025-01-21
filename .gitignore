@@ -16,3 +16,4 @@ tracks-by-L_T
 **/*.kate-swp
 *.kate-swp
 Main*
+release/*
